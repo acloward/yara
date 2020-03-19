@@ -630,7 +630,8 @@ int yr_parser_reduce_string_declaration(
   if (!(modifier.flags & STRING_FLAGS_WIDE) &&
       !(modifier.flags & STRING_FLAGS_XOR) &&
       !(modifier.flags & STRING_FLAGS_BASE64 ||
-        modifier.flags & STRING_FLAGS_BASE64_WIDE))
+        modifier.flags & STRING_FLAGS_BASE64_WIDE) &&
+      !(modifier.flags & STRING_GFLAGS_ROL))
   {
     modifier.flags |= STRING_FLAGS_ASCII;
   }
